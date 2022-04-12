@@ -28,6 +28,14 @@ public class Producto {
         return idProducto;
     }
 
+    public Boolean getEstado() {
+        return estado;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
+    private Categoria categoria;
+
     public void setIdProducto(Integer idProducto) {
         this.idProducto = idProducto;
     }
@@ -70,10 +78,6 @@ public class Producto {
 
     public void setCantidadStock(Integer cantidadStock) {
         this.cantidadStock = cantidadStock;
-    }
-
-    public Boolean getEstado() {
-        return estado;
     }
 
     public void setEstado(Boolean estado) {
