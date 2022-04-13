@@ -12,9 +12,9 @@ public interface ProductoCrudRepository extends CrudRepository<Producto,Integer>
     // next queries are equivalent one use jpa query methods and the another native sql query consults
 
     @Query(value = "SELECT * FROM productos WHERE id_categoria = ?", nativeQuery = true)
-    List<Producto> queryByIDCategoria(int idCategoria);
+    List<Producto> querybyIdcategoria(int idCategoria);
 
-    List<Producto> findByIDCategoriaOrderByNombreAswc(int idCategoria);
+    List<Producto> findByIdCategoriaOrderByNombreAsc(int idCategoria);
 
     Optional<List<Producto>> findByCantidadStockLessThanAndEstado(int cantidadStock, boolean estado);
 }
